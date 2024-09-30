@@ -24,9 +24,6 @@ const LoginPage = () => {
 
     const onSubmit = (e) =>{
         e.preventDefault();
-        console.log({
-            userDetails
-        })
         mutate(userDetails)
     }
 
