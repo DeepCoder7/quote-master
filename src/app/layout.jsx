@@ -1,5 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import QueryProvider from "@/query/Provider";
+import { Toaster } from 'react-hot-toast';
+import Navbar from "@/components/Navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,7 +26,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <QueryProvider>
+          <Toaster
+            position="top-right"
+            reverseOrder={false}
+          />
+          <Navbar />
+          {children}
+        </QueryProvider>
       </body>
     </html>
   );
